@@ -1,0 +1,120 @@
+<%- include('layout', {
+    title: 'Give a Pet Away',
+    body: `
+    <div class="page">
+        
+
+        <h2>Login to Give Away a Pet</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <button type="submit">Login</button>
+        </form>
+        <br>
+
+        <div id="message"></div>
+
+        <br>
+
+        <form id="pet-form" style="display: none;">
+            <fieldset>
+                <legend>Give your pet</legend>
+                <br><br>
+
+                <label for="petName">Pet Name:</label>
+                <input type="text" name="petName" id="petName" required>
+
+                <br><br>
+
+                <input type="radio" id="cat" name="petType" value="Cat" required>
+                <label for="cat">Cat</label>
+        
+                <input type="radio" id="dog" name="petType" value="Dog" required>
+                <label for="dog">Dog</label>
+
+                <br><br>
+
+                <label for="breed">Breed:</label>
+                <select name="breed" id="breed" required>
+                    <option value="">--Select a breed--</option>
+                    <optgroup label="Cat Breeds">
+                        <option value="Persian">Persian</option>
+                        <option value="Maine Coon">Maine Coon</option>
+                        <option value="Siamese">Siamese</option>
+                        <option value="Ragdoll">Ragdoll</option>
+                        <option value="Bengal">Bengal</option>
+                    </optgroup>
+                    <optgroup label="Dog Breeds">
+                        <option value="Labrador Retriever">Labrador Retriever</option>
+                        <option value="German Shepherd">German Shepherd</option>
+                        <option value="Golden Retriever">Golden Retriever</option>
+                        <option value="Bulldog">Bulldog</option>
+                        <option value="Poodle">Poodle</option>
+                    </optgroup>
+                </select>
+        
+                <br><br>
+        
+                <label for="age">Age of animal:</label>
+                <select name="age" id="age" required>
+                    <option value="">--Select an age--</option>
+                    <option value="Puppy/Kitten">Puppy/Kitten</option>
+                    <option value="Young">Young</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
+                </select>
+        
+                <br><br>
+                <label for="gender">Gender:</label>
+
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+        
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
+
+                <br><br>
+        
+                <label for="getsAlongWCat">Gets along with other cats:</label>
+                <input type="checkbox" name="getsAlongWCat" id="getsAlongWCat">
+                <br>
+                <label for="getsAlongWDog">Gets along with other dogs:</label>
+                <input type="checkbox" name="getsAlongWDog" id="getsAlongWDog">
+        
+                <br>
+        
+                <label for="child">Suitable for family with small children:</label>
+                <input type="checkbox" name="child" id="child">
+        
+                <br><br>
+                <label for="comments">Comments about the Pet:</label>
+                <input type="text" name="comments" id="comments">
+        
+                <br><br>
+        
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName">
+        
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required>
+        
+                <br><br>
+        
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </fieldset>
+        </form>
+
+
+
+    </div>
+    <script src="/give.js"></script>
+    `
+}) %>

@@ -1,0 +1,91 @@
+<%- include('layout', {
+    title: 'Find a Pet',
+    body: `
+
+    <div class="page">
+        <h2>Find a dog/cat</h2>
+        <form id="search-form">
+            <fieldset>
+                <legend>Find a pet</legend>
+                <br><br>
+                <input type="radio" id="cat" name="pet" value="cat">
+                <label for="cat">Cat</label>
+        
+                <input type="radio" id="dog" name="pet" value="dog">
+                <label for="dog">Dog</label>
+
+                <br><br>
+
+                <label for="breed">Breed:</label>
+                <select name="breed" id="breed">
+                    <option value="no-preference">No preference</option>
+                    <optgroup label="Cat Breeds">
+                        <option value="persian">Persian</option>
+                        <option value="maine-coon">Maine Coon</option>
+                        <option value="siamese">Siamese</option>
+                        <option value="ragdoll">Ragdoll</option>
+                        <option value="bengal">Bengal</option>
+                    </optgroup>
+                    <optgroup label="Dog Breeds">
+                        <option value="labrador">Labrador Retriever</option>
+                        <option value="german-shepherd">German Shepherd</option>
+                        <option value="golden-retriever">Golden Retriever</option>
+                        <option value="bulldog">Bulldog</option>
+                        <option value="poodle">Poodle</option>
+                    </optgroup>
+                </select>
+    
+                <br><br>
+        
+                <label for="age">Age of animal:</label>
+                <select name="age" id="age">
+                    <option value="no-preference">No preference</option>
+                    <option value="puppy-kitten">Puppy/Kitten</option>
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                </select>
+        
+                <br><br>
+                <label for="male">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+        
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                
+                <input type="radio" id="no" name="gender" value="no-preference">
+                <label for="no">Doesn't matter</label>
+        
+                <br><br>
+        
+                <label for="getsAlongWCat">Needs to get along with other cats:</label>
+                <input type="checkbox" name="getsAlongWCat" id="getsAlongWCat">
+                <br>
+                <label for="getsAlongWDog">Needs to get along with other dogs:</label>
+                <input type="checkbox" name="getsAlongWDog" id="getsAlongWDog">
+                <br>
+                <label for="child">Needs to be suitable for a family with small children:</label>
+                <input type="checkbox" name="child" id="child">
+        
+                <br><br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </fieldset>
+        </form>
+
+        <div class="page">
+            <div class="container" id="browse-container">
+            </div>
+        </div>
+    </div>
+
+        
+        
+
+    </div>
+    <script src="/browse.js"></script>
+    <script src="/find.js"></script>
+
+    `
+}) %>
