@@ -137,8 +137,8 @@ app.post('/add-pet', (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-=======
+
+
 // Route to fetch pets based on search criteria
 app.post('/find-pets', (req, res) => {
     const { petType, breed, age, gender, getsAlongWCat, getsAlongWDog, childFriendly } = req.body;
@@ -172,7 +172,7 @@ app.post('/find-pets', (req, res) => {
 });
 
 
->>>>>>> e43fe3b (fixed find pets)
+
 
 app.get('/', (req, res) => {
     res.render('home', { title: 'Home' });
