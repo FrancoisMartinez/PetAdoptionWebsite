@@ -137,6 +137,42 @@ app.post('/add-pet', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
+=======
+// Route to fetch pets based on search criteria
+app.post('/find-pets', (req, res) => {
+    const { petType, breed, age, gender, getsAlongWCat, getsAlongWDog, childFriendly } = req.body;
+
+    // Read the availablePets.txt file
+    fs.readFile(petInfoFilePath, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({ message: 'Error reading pet info file' });
+        }
+
+        const pets = data.split('\n').filter(Boolean).map(line => {
+            const [id, username, petType, breed, age, gender, getsAlongWCat, getsAlongWDog, childFriendly, comments, firstName, lastName, email] = line.split(':');
+            return { id, username, petType, breed, age, gender, getsAlongWCat: getsAlongWCat === 'true', getsAlongWDog: getsAlongWDog === 'true', childFriendly: childFriendly === 'true', comments, firstName, lastName, email };
+        });
+
+        // Filter pets based on search criteria
+        const filteredPets = pets.filter(pet => {
+            return (
+                (petType === '' || pet.petType.toLowerCase() === petType.toLowerCase()) &&
+                (breed === 'no-preference' || pet.breed.toLowerCase() === breed.toLowerCase()) &&
+                (age === 'no-preference' || pet.age.toLowerCase() === age.toLowerCase()) &&
+                (gender === 'no-preference' || pet.gender.toLowerCase() === gender.toLowerCase()) &&
+                (!getsAlongWCat || pet.getsAlongWCat) &&
+                (!getsAlongWDog || pet.getsAlongWDog) &&
+                (!childFriendly || pet.childFriendly)
+            );
+        });
+
+        res.json(filteredPets);
+    });
+});
+
+
+>>>>>>> e43fe3b (fixed find pets)
 
 app.get('/', (req, res) => {
     res.render('home', { title: 'Home' });
