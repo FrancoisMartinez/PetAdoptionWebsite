@@ -15,19 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const childFriendly = document.getElementById('child').checked;
 
 
-        const filteredPets = pets.filter(pet => {
-            return (
-                (pet.type.toLowerCase() === petType) &&
-                (breed === 'no-preference' || pet.breed.toLowerCase() === breed) &&
-                (age === 'no-preference' || pet.age.toLowerCase() === age) &&
-                (gender === 'no-preference' || pet.gender.toLowerCase() === gender) &&
-                (!getsAlongWCat || pet.catFriendly) &&
-                (!getsAlongWDog || pet.dogFriendly) &&
-                (!childFriendly || pet.kidFriendly)
-            );
-        });
-
-        displayPets(filteredPets);
 
         fetch('/find-pets', {
             method: 'POST',

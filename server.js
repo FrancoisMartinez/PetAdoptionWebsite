@@ -137,8 +137,6 @@ app.post('/add-pet', (req, res) => {
     });
 });
 
-
-
 // Route to fetch pets based on search criteria
 app.post('/find-pets', (req, res) => {
     const { petType, breed, age, gender, getsAlongWCat, getsAlongWDog, childFriendly } = req.body;
@@ -170,7 +168,6 @@ app.post('/find-pets', (req, res) => {
         res.json(filteredPets);
     });
 });
-
 
 
 

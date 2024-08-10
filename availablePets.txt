@@ -1,1 +1,2 @@
 1:frank:Dog:Labrador Retriever:Young:Male:true:true:true:notheing:f:m:fmrtnz004@gmail.com
+2:john:Dog:Labrador Retriever:Young:Male:false:false:false:notheing:f:m:fmrtnz004@gmail.com
